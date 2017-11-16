@@ -108,9 +108,7 @@ object Solution_longestCommonPrefix {
   }
 
   def longestCommonPrefix4(strs: Array[String]): String = {
-   var r = strs.foldLeft("")((_,_) =>    (strs.min,strs.max).zipped.takeWhile(v => v._1 == v._2).unzip._1.mkString)
-   println("** fun4 Used Memory:  " + (runtime.totalMemory - runtime.freeMemory))
-   r
+   strs.foldLeft("")((_,_) =>    (strs.min,strs.max).zipped.takeWhile(v => v._1 == v._2).unzip._1.mkString)
 
   }
 
