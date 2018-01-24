@@ -46,6 +46,7 @@ public class Solution_26 {
         for(int j=0; j<(l-1) ; j++){
           
             if(nums[j]!=nums[j+1]){
+                
                 i++;
                 nums[i] = nums[j+1];
             }
