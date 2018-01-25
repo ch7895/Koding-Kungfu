@@ -55,5 +55,32 @@ public class Solution_26 {
         return i+1;
     }
 	
+	// solution 80
+	public int removeDuplicates(int[] nums) {
+        
+        int c = 0;
+        
+        int l = nums.length;
+        int j=1;
+        
+        for(int i=1; i<l; i++){
+                        
+            if(nums[i-1]!=nums[i]){
+                nums[j] = nums[i];    
+                j++;
+                c=0;
+            }
+            else if(nums[i-1]==nums[i]){
+                c++;
+                if(c<2){
+                    nums[j] = nums[i];    
+                    j++;
+                }
+            }
+        }
+        return j;
+            
+    }
+	
 	
 }
