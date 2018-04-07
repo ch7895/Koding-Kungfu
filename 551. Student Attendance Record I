@@ -1,0 +1,12 @@
+class Solution {
+    public boolean Solution(String s) {
+        return !s.matches(".*LLL.*|.*A.*A.*");
+    }
+}
+
+
+
+/*
+특정 문자열이 포함여부 정규식 
+ -> .*LLL.*
+*/
