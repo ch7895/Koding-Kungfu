@@ -1,0 +1,48 @@
+import java.util.*;
+import java.io.*;
+public class Solution {
+  public static void main(String[] args) {
+	  
+	  int[] arr = {1,2,3,4};
+    
+    int[] brr = Arrays.copyOf(arr, arr.length);
+	  int[] crr = arr.clone();
+    
+	  
+	  for(int n : brr){
+		  System.out.print(n + " ");
+	  }
+	  System.out.println("\n arr == brr : " + (arr == brr));
+	  
+	  for(int n : crr){
+		  System.out.print(n + " ");
+	  }
+	  System.out.println("\n arr == crr : " + (arr == crr));
+	  
+	  Arrays.sort(arr);
+	  int min = Integer.MAX_VALUE;
+	  int max = Integer.MIN_VALUE;
+	  for(int i=0; i<arr.length; i++){
+		  
+		  if(arr[i] != brr[i] ){
+			  if(i>=max) max = i;
+			  if(i<=min) min = i;
+		  }
+		  
+	  }
+	  
+	  return max-min + 1;
+	 
+   
+   /***
+  1. call by refrence
+   -> array 할당하는방식은 call by refrence 이므로 나중에 sort가 발생하면 같이 바뀌어버림
+    
+  2. Object.clone() vs Arrays.copyOf()
+   -> 값만 가져오기 위해 Object.clone(), Arrays.copyOf()사용
+   -> 속도는 clone()이 빠름 
+  
+   */
+  }
+}
+
