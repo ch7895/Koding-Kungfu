@@ -1,0 +1,18 @@
+class Solution {
+    public String convertToTitle(int n) {
+        // 65 === A , 90 === Z
+        StringBuilder sb = new StringBuilder();
+        char c = ' ';
+        while(n>0){
+            if(n%26!=0){
+                c = (char)(n%26 + 64);
+            }else {
+                c = 'Z';
+                n = n-26;
+            }
+            sb.append(c);
+            n=n/26;
+        }
+        return sb.reverse().toString();
+    }
+}
