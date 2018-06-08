@@ -1,0 +1,31 @@
+class Solution {
+    public boolean backspaceCompare(String S, String T) {
+        
+        
+        return backspaceString(S).equals(backspaceString(T));
+        
+    }
+    
+    public ArrayList<Character> backspaceString(String S){
+        
+        
+        int sn = S.length();
+        
+        int flag = 0;
+        ArrayList<Character> sList = new ArrayList<Character>();
+        for(int i=sn-1; i>=0; i--){
+
+            if(S.charAt(i)=='#'){
+                flag += 1;
+            }
+            else if(flag>0){
+                flag -= 1;
+            }else if(flag==0){
+                sList.add(S.charAt(i));
+            }
+        }
+        
+        return sList;
+
+    }
+}
