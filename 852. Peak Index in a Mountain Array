@@ -1,0 +1,13 @@
+    public int peakIndexInMountainArray(int[] A) {
+        
+		int p =0;
+		int m = Integer.MIN_VALUE;
+		for(int i=0; i<A.length; i++){
+			if(m<A[i]){
+				m=A[i];
+				p=i;
+			}
+		}
+		return p;
+
+    }
