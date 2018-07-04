@@ -1,0 +1,38 @@
+class Solution {
+    public boolean lemonadeChange(int[] bills) {
+        
+        int b5 = 0;
+        int b10 = 0;
+
+
+        for(int b : bills){
+            System.out.println(b + "/b5:" + b5 + "/b10:" + b10);
+            if(b==5){
+                b5++;
+            }else if(b==10){
+                if(b5<1)
+                    return false;
+                else if(b5>0){
+                    b5--;
+                    b10++;
+                }
+            }else if(b==20){
+                if(b5<1 || (b5<3 && b10<1)){
+                    return false;
+                }
+                else{
+                    b5--;
+                    if(b10<1 && b5>2){
+                        b5-=2;
+                    }else{
+                        b10--;
+                    }
+                }
+            }
+
+        }
+
+        return true;
+
+    }
+}
