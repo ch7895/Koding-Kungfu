@@ -1,0 +1,34 @@
+
+    public List<Integer> getRow() {
+
+        List<Integer> asdf ;
+        List<Integer> before;
+
+        asdf = new ArrayList<Integer>();
+
+
+        for(int i=0; i<5; i++){
+
+            before = asdf;
+            asdf = new ArrayList<Integer>();
+            for(int j=0; j<=i; j++){
+
+                if(j==0 || j==i){
+                    asdf.add(1);
+                }
+                else{
+                    asdf.add(before.get(j) + before.get(j-1));
+                }
+                System.out.print(asdf.get(j) + "_");
+            }
+            System.out.println();
+
+        }
+
+        return asdf;
+
+
+
+
+    }
+
